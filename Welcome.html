@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Braille Auto-Correct System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="container">
+    <h1>Braille Auto-Correct System</h1>
+    <p>Type Braille using QWERTY keys (s, d, f, j, k, l) or click the buttons below</p>
+
+    <div class="input-container">
+      <input
+        type="text"
+        id="brailleInput"
+        placeholder="Enter Braille sequence..."
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button id="clearInput" class="control-btn" title="Clear input">⌫</button>
+    </div>
+
+    <div class="output-container">
+      <input
+        type="text"
+        id="brailleOutput"
+        placeholder="Translation will appear here..."
+        readonly
+      />
+    </div>
+    <div id="keyboard" aria-label="Braille keyboard">
+      <div class="keyboard-row">
+        <button class="braille-key" data-key="s">S</button>
+        <button class="braille-key" data-key="d">D</button>
+        <button class="braille-key" data-key="f">F</button>
+      </div>
+      <div class="keyboard-row">
+        <button class="braille-key" data-key="j">J</button>
+        <button class="braille-key" data-key="k">K</button>
+        <button class="braille-key" data-key="l">L</button>
+      </div>
+    </div>
+
+    <div id="suggestionContainer">
+      <label>Suggested Word:</label>
+      <span id="suggestion" class="suggestion-word">None</span>
+      <span id="suggestionHint" class="suggestion-hint">Click here if you want this word</span>
+    </div>
+
+    <div class="control-buttons">
+      <button id="themeToggle" class="theme-toggle">🌞 Dark Mode</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
